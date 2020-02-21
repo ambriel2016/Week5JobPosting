@@ -23,27 +23,27 @@
     </div>
 </header>
 
-<div class="card-columns">
-    <div th:each="job : ${jobs}">
-        <div class="card">
-            <div class="card-block">
-                <div th:if="${job.posting} != null">
-                    <img class="img-fluid" th:src="${job.posting}" /><hr />
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title" th:text="${job.title}"></h4>
-                    <h4 class="card title" th:text="${job.description}"></h4>
-                    <h4 class="card-text" th:text="${job.postedDate}"></h4>
-                    <h4 class="card-text" th:text="${job.author}"></h4>
-                    <h4 class="card-text" th:text="${job.phone}"></h4>
-                </div>
-                <div class="card-footer">
-                    <!--                    <small class="text-muted">Uploaded by: </small><small class="text-muted"  th:text="${todo.user}"></small>-->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="card-columns">-->
+<!--    <div th:each="job : ${jobs}">-->
+<!--        <div class="card">-->
+<!--            <div class="card-block">-->
+<!--                <div th:if="${job.posting} != null">-->
+<!--                    <img class="img-fluid" th:src="${job.posting}" /><hr />-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <h4 class="card-title" th:text="${job.title}"></h4>-->
+<!--                    <h4 class="card title" th:text="${job.description}"></h4>-->
+<!--                    <h4 class="card-text" th:text="${job.postedDate}"></h4>-->
+<!--                    <h4 class="card-text" th:text="${job.author}"></h4>-->
+<!--                    <h4 class="card-text" th:text="${job.phone}"></h4>-->
+<!--                </div>-->
+<!--                <div class="card-footer">-->
+<!--                    &lt;!&ndash;                    <small class="text-muted">Uploaded by: </small><small class="text-muted"  th:text="${todo.user}"></small>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <footer th:replace="base :: footer"></footer>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

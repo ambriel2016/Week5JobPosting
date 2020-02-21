@@ -24,27 +24,23 @@ public class Job {
     private String description;
 
     @NotNull
-    @Size(min=3)
-    private String postedDate;
+    @Min(3)
+    private int postedDate;
 
     @NotNull
-    @Size(min=10)
+    @Size(min=5)
     private String author;
 
     @NotNull
-    @Min(10)
-    private int phone;
 
-    @NotNull
-    private String posting;
+    private String phone;
 
-    public Job(@NotNull @Size(min = 5) String title, @NotNull @Size(min = 10) String description, @NotNull @Size(min = 3) String postedDate, @NotNull @Size(min = 10) String author, @NotNull @Min(10) int phone, @NotNull String posting) {
+    public Job(@NotNull @Size(min = 5) String title, @NotNull @Size(min = 10) String description, @NotNull @Min(3) int postedDate, @NotNull @Size(min = 5) String author, @NotNull String phone) {
         this.title = title;
         this.description = description;
         this.postedDate = postedDate;
         this.author = author;
         this.phone = phone;
-        this.posting = posting;
     }
 
     public Job() {
@@ -74,11 +70,11 @@ public class Job {
         this.description = description;
     }
 
-    public String getPostedDate() {
+    public int getPostedDate() {
         return postedDate;
     }
 
-    public void setPostedDate(String postedDate) {
+    public void setPostedDate(int postedDate) {
         this.postedDate = postedDate;
     }
 
@@ -90,19 +86,11 @@ public class Job {
         this.author = author;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getPosting() {
-        return posting;
-    }
-
-    public void setPosting(String posting) {
-        this.posting = posting;
     }
 }

@@ -27,29 +27,39 @@
     <div class="col-md-6">
         <h1>Add a Job</h1>
         <hr>
-        <form method="POST" action="/add" th:object="${job}"
+        <form method="POST" action="#" th:action="@{/process}" th:object="${job}"
               enctype="multipart/form-data">
             <div class="form-group">
                 <input  type="hidden" th:field="*{id}"/>
-                <input  type="hidden" th:field="*{posting}"/>
+<!--                <input  type="hidden" th:field="*{posting}"/>-->
                 <label for="nameinput">Title</label>
                 <input id="nameinput"  class="form-control" type="text" th:field="*{title}" placeholder="Enter the title of the job:" />
+                <span th:if="${#fields.hasErrors('title')}"
+                      th:errors="*{title}"></span><br />
             </div>
             <div class="form-group">
                 <label for="nameinput">Description</label>
-                <input id="nameinput1" class="form-control" type="text" th:field="*{description}" placeholder="Enter the description of the job:" />
+                <input id="nameinput1" class="form-control" textarea rows="3" th:field="*{description}" placeholder="Enter the description of the job:" />
+                <span th:if="${#fields.hasErrors('description')}"
+                      th:errors="*{description}"></span><br />
             </div>
             <div class="form-group">
                 <label for="nameinput">Posted Date</label>
                 <input id="nameinput2" class="form-control" type="text" th:field="*{postedDate}" placeholder="Enter the date of the job:"/>
+                <span th:if="${#fields.hasErrors('postedDate')}"
+                      th:errors="*{postedDate}"></span><br />
             </div>
             <div class="form-group">
                 <label for="nameinput">Author</label>
                 <input id="nameinput3" class="form-control" type="text" th:field="*{author}" placeholder="Enter the author's name:"/>
+                <span th:if="${#fields.hasErrors('author')}"
+                      th:errors="*{author}"></span><br />
             </div>
             <div class="form-group">
                 <label for="nameinput">Phone</label>
                 <input id="nameinput4" class="form-control" type="text" th:field="*{phone}" placeholder="Enter s phone number:"/>
+                <span th:if="${#fields.hasErrors('phone')}"
+                      th:errors="*{phone}"></span><br />
             </div>
             <div class="form-group">
                 <input type="file" name="file" class="form-control-file"  /><br/><br/>
